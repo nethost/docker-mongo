@@ -1,17 +1,37 @@
-# MongoDB Docker Images
+# MongoDB Images
 
-Docker + Alpine3.6 + MongoDB3.4.4
+## 4.1
+```
+$ docker build -t=nethost/mongo:4.1-ubuntu .
+$ docker push nethost/mongo:4.1-ubuntu
+$ docker pull nethost/mongo:4.1-ubuntu
+```
 
-#### Run a default container
+## 4.0
 ```
-$ docker run --name mongo -v /Users/billgo/data/mongo:/var/lib/mongo -d -p 28017:27017 nethost/mongo
+$ docker build -t=nethost/mongo:4.0-ubuntu .
+$ docker push nethost/mongo:4.0-ubuntu
+$ docker pull nethost/mongo:4.0-ubuntu
 ```
 
-## 辅助命令
+## 3.6
 ```
-$ docker ps -l
-$ docker stop $(docker ps -a -q)
-$ docker rm $(docker ps -a -q)
-$ docker rmi $(docker images -q)
-$ docker rmi $(docker images -q -f dangling=true)
+$ docker build -t=nethost/mongo:3.6-ubuntu .
+$ docker push nethost/mongo:3.6-ubuntu
+$ docker pull nethost/mongo:3.6-ubuntu
+
+$ docker build -t=nethost/mongo:3.6-debian .
+$ docker push nethost/mongo:3.6-debian
+$ docker pull nethost/mongo:3.6-debian
+```
+
+## 3.4
+```
+$ docker build -t=nethost/mongo:3.4-ubuntu .
+$ docker push nethost/mongo:3.4-ubuntu
+$ docker pull nethost/mongo:3.4-ubuntu
+
+$ docker build -t=nethost/mongo:3.4-debian .
+$ docker push nethost/mongo:3.4-debian
+$ docker pull nethost/mongo:3.4-debian
 ```
