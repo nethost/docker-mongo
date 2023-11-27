@@ -1,6 +1,6 @@
 services:
-  builder:
+  latest:
     build:
       context: .
-      target: builder
+      target: latest
     image: nethost/mongo:7.0

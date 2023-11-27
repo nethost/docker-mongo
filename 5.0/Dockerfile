@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM ubuntu:focal as builder
+FROM ubuntu:focal as latest
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN set -eux; \
@@ -84,8 +84,8 @@ ENV MONGO_MAJOR 5.0
 RUN echo "deb [ signed-by=/etc/apt/keyrings/mongodb.gpg ] http://$MONGO_REPO/apt/ubuntu focal/${MONGO_PACKAGE%-unstable}/$MONGO_MAJOR multiverse" | tee "/etc/apt/sources.list.d/${MONGO_PACKAGE%-unstable}.list"
 
 # https://docs.mongodb.org/master/release-notes/5.0/
-ENV MONGO_VERSION 5.0.21
-# 09/07/2023, https://github.com/mongodb/mongo/tree/4fad44a858d8ee2d642566fc8872ef410f6534e4
+ENV MONGO_VERSION 5.0.22
+# 10/25/2023, https://github.com/mongodb/mongo/tree/302c19437ae65b7d459360e18c5ac5086f494989
 
 RUN set -x \
 # installing "mongodb-enterprise" pulls in "tzdata" which prompts for input
